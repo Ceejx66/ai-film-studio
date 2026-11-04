@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10131d">
+<title>CJ AI Film Studio</title>
+<style>
+:root{--bg:#0d1018;--panel:#171c29;--panel2:#202738;--line:#30394c;--gold:#e8b96b;--text:#f4f2ed;--muted:#a6afbf;--green:#82c9a5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#20283a 0,#0d1018 55%);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+header{padding:28px 20px 18px;max-width:850px;margin:auto} .eyebrow{color:var(--gold);letter-spacing:.18em;font-size:10px;font-weight:800}
+h1{font-size:27px;letter-spacing:.02em;margin:7px 0 4px} .sub{color:var(--muted);font-size:13px}
+main{max-width:850px;margin:auto;padding:0 16px 50px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:20px;background:linear-gradient(135deg,#242d40,#171c29 65%);position:relative;overflow:hidden}
+.hero:after{content:"🎬";position:absolute;font-size:100px;right:12px;top:10px;opacity:.12}
+.hero h2{font-size:21px;margin:0 0 8px;max-width:75%}.hero p{color:#c2cada;line-height:1.5;max-width:75%;font-size:13px}
+.badge{display:inline-block;color:var(--green);border:1px solid #3c6957;border-radius:99px;padding:5px 9px;font-size:10px;font-weight:700}
+.tabs{display:flex;gap:8px;overflow:auto;padding:16px 0}
+.tab{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:99px;padding:10px 13px;font-size:12px}
+.tab.active{background:var(--gold);color:#171717;border-color:var(--gold);font-weight:800}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:17px;margin:0 0 14px}
+h3{margin:0 0 12px;font-size:16px}label{display:block;color:#d6dbe5;font-size:12px;margin:12px 0 6px}
+input,textarea,select{width:100%;background:#0f1420;color:var(--text);border:1px solid var(--line);border-radius:11px;padding:12px;font:inherit;outline:none}
+textarea{min-height:110px;resize:vertical;line-height:1.5}
+button{border:0;border-radius:12px;padding:12px 15px;background:var(--gold);color:#171717;font-weight:800;font-size:13px}
+button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+button.danger{background:#46252b;color:#ffd9dc}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.small{font-size:11px;color:var(--muted);line-height:1.5}.scene{border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:10px;background:#111724}
+.scene h4{margin:0 0 6px;font-size:13px;color:var(--gold)}.scene p{font-size:12px;color:#d5dbe5;line-height:1.5;white-space:pre-wrap;margin:6px 0}
+.hidden{display:none!important}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+footer{text-align:center;color:#778196;font-size:10px;padding:22px}
+@media(max-width:500px){.row{grid-template-columns:1fr}.hero h2,.hero p{max-width:85%}}
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">PRIVATE MOVIE WORKSPACE</div>
+ <h1>CJ AI FILM STUDIO</h1>
+ <div class="sub">Your stories. Your characters. Your films.</div>
+</header>
+<main>
+ <section class="hero">
+  <span class="badge">MOBILE EDITION · VERSION 0.1</span>
+  <h2>Turn your imagination into a movie.</h2>
+  <p>Plan Filipino short films, build characters and prepare scene prompts for your AI video generator.</p>
+ </section>
+ <nav class="tabs">
+  <button class="tab active" data-tab="project">Movie Project</button>
+  <button class="tab" data-tab="characters">Characters</button>
+  <button class="tab" data-tab="scenes">Storyboard</button>
+  <button class="tab" data-tab="export">Production</button>
+ </nav>
+ <section id="project" class="page">
+  <div class="card">
+   <h3>🎥 Create a movie</h3>
+   <label>Movie title</label><input id="title" value="Ang Mahiwagang Banga" placeholder="Your movie title">
+   <div class="row">
+    <div><label>Language</label><select id="language"><option>Tagalog</option><option>Taglish</option><option>English</option></select></div>
+    <div><label>Visual style</label><select id="style"><option>Cinematic realism</option><option>Fantasy realism</option><option>3D animation</option></select></div>
+   </div>
+   <div class="row">
+    <div><label>Target length</label><select id="length"><option>90 seconds</option><option>60 seconds</option><option>2 minutes</option><option>5 minutes</option></select></div>
+    <div><label>Video format</label><select id="format"><option>Vertical 9:16 (Reels)</option><option>Landscape 16:9</option><option>Square 1:1</option></select></div>
+   </div>
+   <label>Story idea</label><textarea id="story" placeholder="Write your story idea here...">Si Mang Elias ay isang mahirap na magsasaka. Nakakita siya ng ginto sa lupang minana niya. Nang malaman niyang ibebenta ang bukid para tayuan ng apartment, naghukay siya at nakakita ng mahiwagang banga na kayang magbigay ng anumang kayamanan—ngunit hindi nito pinagbibigyan ang taong gahaman.</textarea>
+   <div class="actions"><button id="make">Create scene outline</button><button class="secondary" id="save">Save project</button></div>
+   <p class="small">This first version prepares your screenplay and prompts. It does not generate AI video itself or use paid APIs.</p>
+  </div>
+  <div class="card"><h3>📌 Project notes</h3><p class="small">Keep the same character descriptions, clothing and visual style in every scene to help maintain continuity between AI-generated clips.</p></div>
+ </section>
+ <section id="characters" class="page hidden">
+  <div class="card"><h3>👥 Character library</h3>
+   <label>Character name</label><input id="charName" placeholder="e.g. Mang Elias">
+   <label>Character description (keep this consistent)</label><textarea id="charDesc" placeholder="Age, face, hair, clothing, personality..."></textarea>
+   <button id="addChar">Add character</button><div id="charList"></div>
+  </div>
+ </section>
+ <section id="scenes" class="page hidden">
+  <div class="card"><h3>🎞️ Storyboard</h3><p class="small">Create an outline from your story, then copy each prompt into your chosen AI video tool.</p><div id="sceneList"><p class="small">No scene outline yet. Open Movie Project and tap “Create scene outline”.</p></div></div>
+ </section>
+ <section id="export" class="page hidden">
+  <div class="card"><h3>🎬 Production checklist</h3>
+   <div id="checks"></div>
+   <div class="actions"><button class="secondary" id="copyAll">Copy project brief</button><button class="danger" id="clear">Clear local project</button></div>
+   <p class="small">Your project data is saved in this browser on this device. Clearing Safari website data may erase it. Export or copy important work before clearing.</p>
+  </div>
+ </section>
+ <footer>CJ AI FILM STUDIO · Built for personal creative projects</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let scenes=[],characters=JSON.parse(localStorage.getItem('cj_chars')||'[]');
+function persist(){localStorage.setItem('cj_project',JSON.stringify({title:$('title').value,language:$('language').value,style:$('style').value,length:$('length').value,format:$('format').value,story:$('story').value}));localStorage.setItem('cj_chars',JSON.stringify(characters))}
+function load(){let p=JSON.parse(localStorage.getItem('cj_project')||'null');if(p)Object.keys(p).forEach(k=>{if($(k))$(k).value=p[k]});renderChars();renderChecks()}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.page').forEach(x=>x.classList.toggle('hidden',x.id!==b.dataset.tab))});
+const templates=[
+['Opening – Establishing shot','Ipakita ang lugar at panahon ng kuwento.','Cinematic establishing shot of a rural Philippine farm at sunrise, lush green rice fields, a small traditional farmhouse, distant mountains, warm natural light. Slow aerial camera glide, realistic atmosphere, no text, vertical 9:16.'],
+['Main character introduction','Ipakilala ang pangunahing tauhan sa kanyang pang-araw-araw na gawain.','Use the saved main character reference. Show the farmer working in the field, wiping sweat and pausing to look across the land. Medium shot slowly pushing into a close-up, natural body movement, cinematic realism, vertical 9:16.'],
+['Conflict begins','Ipakita ang taong hahadlang sa pangunahing tauhan.','Use the saved character references. Two brothers confront each other beside the field. One is wealthy and arrogant; the farmer remains calm but hurt. Medium two-shot, subtle camera push-in, realistic expressions, cinematic drama, vertical 9:16.'],
+['The bad news','Ipakita ang pinakamahalagang problema ng kuwento.','The wealthy brother reveals papers showing the land will be redeveloped. The farmer reacts with shock and disbelief. Camera moves from the papers to his face, dramatic natural lighting, cinematic realism, vertical 9:16.'],
+['Mystery / discovery','Magtapos sa isang misteryo na magpapahintay sa susunod na episode.','At dusk, the farmer digs into the earth and discovers an ancient clay jar glowing with mysterious golden light. Slow camera push toward the object, suspenseful cinematic lighting, realistic magical effects, vertical 9:16.']
+];
+function makeScenes(){let title=$('title').value||'Untitled movie';scenes=templates.map((t,i)=>({name:t[0],beat:t[1],prompt:t[2]}));renderScenes();persist();document.querySelector('[data-tab="scenes"]').click()}
+function renderScenes(){$('sceneList').innerHTML='';scenes.forEach((s,i)=>{let d=document.createElement('div');d.className='scene';d.innerHTML=`<h4>SCENE ${i+1} · ${s.name}</h4><p>${s.beat}</p><p><b>AI VIDEO PROMPT</b>\n${s.prompt}</p><button class="secondary" data-copy="${i}">Copy prompt</button>`;$('sceneList').appendChild(d)});$('sceneList').querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(scenes[+b.dataset.copy].prompt).then(()=>b.textContent='Copied!'))}
+function renderChars(){$('charList').innerHTML='';characters.forEach((c,i)=>{let d=document.createElement('div');d.className='scene';d.innerHTML=`<h4>${esc(c.name)}</h4><p>${esc(c.desc)}</p><button class="danger" data-del="${i}">Delete</button>`;$('charList').appendChild(d)});$('charList').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{characters.splice(+b.dataset.del,1);persist();renderChars()})}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('make').onclick=makeScenes;$('save').onclick=()=>{persist();$('save').textContent='Saved ✓';setTimeout(()=>$('save').textContent='Save project',1400)};
+$('addChar').onclick=()=>{let n=$('charName').value.trim(),d=$('charDesc').value.trim();if(!n||!d){alert('Add a character name and description first.');return}characters.push({name:n,desc:d});$('charName').value='';$('charDesc').value='';persist();renderChars()};
+function renderChecks(){let items=['Finalize the story and episode ending','Create and save character reference images','Generate each scene image','Animate scene images in an AI video tool','Record or generate Tagalog narration','Edit clips, subtitles and sound in a video editor','Export and review the final video'];$('checks').innerHTML=items.map((x,i)=>`<label style="display:flex;gap:10px;align-items:center;padding:9px 0"><input type="checkbox" style="width:18px;height:18px;accent-color:#e8b96b" data-check="${i}"><span>${x}</span></label>`).join('');document.querySelectorAll('[data-check]').forEach(c=>c.checked=localStorage.getItem('cj_check_'+c.dataset.check)==='1');document.querySelectorAll('[data-check]').forEach(c=>c.onchange=()=>localStorage.setItem('cj_check_'+c.dataset.check,c.checked?'1':'0'))}
+$('copyAll').onclick=()=>{let p={title:$('title').value,story:$('story').value,characters,scenes};navigator.clipboard.writeText(JSON.stringify(p,null,2)).then(()=>$('copyAll').textContent='Copied ✓')};
+$('clear').onclick=()=>{if(confirm('Delete this project and saved characters from this browser?')){localStorage.removeItem('cj_project');localStorage.removeItem('cj_chars');location.reload()}};
+load();
+</script>
+</body></html>
