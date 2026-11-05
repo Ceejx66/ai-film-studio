@@ -1,115 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#10131d">
-<title>CJ AI Film Studio</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10131d"><title>AI Film Studio</title>
 <style>
-:root{--bg:#0d1018;--panel:#171c29;--panel2:#202738;--line:#30394c;--gold:#e8b96b;--text:#f4f2ed;--muted:#a6afbf;--green:#82c9a5}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#20283a 0,#0d1018 55%);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
-header{padding:28px 20px 18px;max-width:850px;margin:auto} .eyebrow{color:var(--gold);letter-spacing:.18em;font-size:10px;font-weight:800}
-h1{font-size:27px;letter-spacing:.02em;margin:7px 0 4px} .sub{color:var(--muted);font-size:13px}
-main{max-width:850px;margin:auto;padding:0 16px 50px}
-.hero{border:1px solid var(--line);border-radius:22px;padding:20px;background:linear-gradient(135deg,#242d40,#171c29 65%);position:relative;overflow:hidden}
-.hero:after{content:"🎬";position:absolute;font-size:100px;right:12px;top:10px;opacity:.12}
-.hero h2{font-size:21px;margin:0 0 8px;max-width:75%}.hero p{color:#c2cada;line-height:1.5;max-width:75%;font-size:13px}
-.badge{display:inline-block;color:var(--green);border:1px solid #3c6957;border-radius:99px;padding:5px 9px;font-size:10px;font-weight:700}
-.tabs{display:flex;gap:8px;overflow:auto;padding:16px 0}
-.tab{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:99px;padding:10px 13px;font-size:12px}
-.tab.active{background:var(--gold);color:#171717;border-color:var(--gold);font-weight:800}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:17px;margin:0 0 14px}
-h3{margin:0 0 12px;font-size:16px}label{display:block;color:#d6dbe5;font-size:12px;margin:12px 0 6px}
-input,textarea,select{width:100%;background:#0f1420;color:var(--text);border:1px solid var(--line);border-radius:11px;padding:12px;font:inherit;outline:none}
-textarea{min-height:110px;resize:vertical;line-height:1.5}
-button{border:0;border-radius:12px;padding:12px 15px;background:var(--gold);color:#171717;font-weight:800;font-size:13px}
-button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
-button.danger{background:#46252b;color:#ffd9dc}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.small{font-size:11px;color:var(--muted);line-height:1.5}.scene{border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:10px;background:#111724}
-.scene h4{margin:0 0 6px;font-size:13px;color:var(--gold)}.scene p{font-size:12px;color:#d5dbe5;line-height:1.5;white-space:pre-wrap;margin:6px 0}
-.hidden{display:none!important}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-footer{text-align:center;color:#778196;font-size:10px;padding:22px}
-@media(max-width:500px){.row{grid-template-columns:1fr}.hero h2,.hero p{max-width:85%}}
-</style>
-</head>
+:root{--bg:#0c1019;--panel:#171e2c;--panel2:#202a3b;--line:#344057;--gold:#efbd70;--text:#f5f3ef;--muted:#aab4c5;--green:#8bd1a9;--red:#ffb5b5}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(150deg,#1b2639 0,#0c1019 44%);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header,main{max-width:980px;margin:auto}header{padding:25px 18px 16px}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--gold);font-weight:800}h1{font-size:29px;margin:7px 0}.sub,.muted,.hint{color:var(--muted)}.sub{font-size:14px}
+main{padding:0 14px 50px}.hero,.card{border:1px solid var(--line);border-radius:19px;background:var(--panel);padding:17px;margin-bottom:13px}.hero{background:linear-gradient(120deg,#26344b,#171e2c);padding:22px}.hero h2{font-size:22px;margin:9px 0}.hero p{line-height:1.55;color:#c6d0df;max-width:720px}.pill{display:inline-block;border:1px solid #46735b;color:var(--green);border-radius:30px;padding:5px 10px;font-size:10px;font-weight:800;letter-spacing:.05em}
+.tabs{display:flex;gap:7px;overflow:auto;padding:12px 0 16px}.tab{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:30px;padding:10px 13px;font-weight:700}.tab.active{background:var(--gold);color:#171717;border-color:var(--gold)}
+.page.hidden{display:none}h3{font-size:17px;margin:0 0 12px}h4{margin:0 0 8px;color:var(--gold)}label{display:block;color:#d5dce8;font-size:12px;margin:12px 0 6px}
+input,textarea,select{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--text);font:inherit}textarea{min-height:100px;line-height:1.5;resize:vertical}input[type=file]{font-size:12px}
+button,.linkbtn{display:inline-block;border:0;border-radius:10px;padding:11px 14px;background:var(--gold);color:#171717;font-weight:800;font-size:13px;text-decoration:none;cursor:pointer}.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.danger{background:#4b2930;color:#ffdada}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hint{font-size:11px;line-height:1.5}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.item{border:1px solid var(--line);border-radius:13px;background:#111826;padding:13px;margin-top:10px}.item p{white-space:pre-wrap;line-height:1.5;font-size:13px;color:#d4dbe7}.photo{display:block;width:100%;max-width:220px;max-height:260px;object-fit:contain;border-radius:10px;margin:10px 0}.scenehead{display:flex;justify-content:space-between;gap:8px;align-items:center}.badge{font-size:10px;color:var(--green)}.check{display:flex;align-items:flex-start;gap:9px;padding:8px 0}.check input{width:18px;margin:0}.check span{font-size:13px}.callout{border-left:3px solid var(--gold);padding:10px 12px;background:#111826;color:#d9e0eb;font-size:12px;line-height:1.5}
+footer{text-align:center;color:#78849a;font-size:10px;padding:20px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}h1{font-size:25px}}
+</style></head>
 <body>
-<header>
- <div class="eyebrow">PRIVATE MOVIE WORKSPACE</div>
- <h1>CJ AI FILM STUDIO</h1>
- <div class="sub">Your stories. Your characters. Your films.</div>
-</header>
+<header><div class="eyebrow">PRIVATE MOVIE WORKSPACE</div><h1>AI FILM STUDIO</h1><div class="sub">Your stories. Your characters. Your films.</div></header>
 <main>
- <section class="hero">
-  <span class="badge">MOBILE EDITION · VERSION 0.1</span>
-  <h2>Turn your imagination into a movie.</h2>
-  <p>Plan Filipino short films, build characters and prepare scene prompts for your AI video generator.</p>
- </section>
- <nav class="tabs">
-  <button class="tab active" data-tab="project">Movie Project</button>
-  <button class="tab" data-tab="characters">Characters</button>
-  <button class="tab" data-tab="scenes">Storyboard</button>
-  <button class="tab" data-tab="export">Production</button>
- </nav>
- <section id="project" class="page">
-  <div class="card">
-   <h3>🎥 Create a movie</h3>
-   <label>Movie title</label><input id="title" value="Ang Mahiwagang Banga" placeholder="Your movie title">
-   <div class="row">
-    <div><label>Language</label><select id="language"><option>Tagalog</option><option>Taglish</option><option>English</option></select></div>
-    <div><label>Visual style</label><select id="style"><option>Cinematic realism</option><option>Fantasy realism</option><option>3D animation</option></select></div>
-   </div>
-   <div class="row">
-    <div><label>Target length</label><select id="length"><option>90 seconds</option><option>60 seconds</option><option>2 minutes</option><option>5 minutes</option></select></div>
-    <div><label>Video format</label><select id="format"><option>Vertical 9:16 (Reels)</option><option>Landscape 16:9</option><option>Square 1:1</option></select></div>
-   </div>
-   <label>Story idea</label><textarea id="story" placeholder="Write your story idea here...">Si Mang Elias ay isang mahirap na magsasaka. Nakakita siya ng ginto sa lupang minana niya. Nang malaman niyang ibebenta ang bukid para tayuan ng apartment, naghukay siya at nakakita ng mahiwagang banga na kayang magbigay ng anumang kayamanan—ngunit hindi nito pinagbibigyan ang taong gahaman.</textarea>
-   <div class="actions"><button id="make">Create scene outline</button><button class="secondary" id="save">Save project</button></div>
-   <p class="small">This first version prepares your screenplay and prompts. It does not generate AI video itself or use paid APIs.</p>
-  </div>
-  <div class="card"><h3>📌 Project notes</h3><p class="small">Keep the same character descriptions, clothing and visual style in every scene to help maintain continuity between AI-generated clips.</p></div>
- </section>
- <section id="characters" class="page hidden">
-  <div class="card"><h3>👥 Character library</h3>
-   <label>Character name</label><input id="charName" placeholder="e.g. Mang Elias">
-   <label>Character description (keep this consistent)</label><textarea id="charDesc" placeholder="Age, face, hair, clothing, personality..."></textarea>
-   <button id="addChar">Add character</button><div id="charList"></div>
-  </div>
- </section>
- <section id="scenes" class="page hidden">
-  <div class="card"><h3>🎞️ Storyboard</h3><p class="small">Create an outline from your story, then copy each prompt into your chosen AI video tool.</p><div id="sceneList"><p class="small">No scene outline yet. Open Movie Project and tap “Create scene outline”.</p></div></div>
- </section>
- <section id="export" class="page hidden">
-  <div class="card"><h3>🎬 Production checklist</h3>
-   <div id="checks"></div>
-   <div class="actions"><button class="secondary" id="copyAll">Copy project brief</button><button class="danger" id="clear">Clear local project</button></div>
-   <p class="small">Your project data is saved in this browser on this device. Clearing Safari website data may erase it. Export or copy important work before clearing.</p>
-  </div>
- </section>
- <footer>CJ AI FILM STUDIO · Built for personal creative projects</footer>
+<section class="hero"><span class="pill">COMPLETE WORKSPACE Â· FREE PLANNER</span><h2>Plan your film from story to final edit.</h2><p>Build characters, write Tagalog scenes, prepare image and video prompts, plan narration and sound, then send prompts to a free external generator when ready.</p></section>
+<nav class="tabs">
+<button class="tab active" data-tab="project">Project</button><button class="tab" data-tab="characters">Characters</button><button class="tab" data-tab="storyboard">Storyboard</button><button class="tab" data-tab="audio">Dialogue & Audio</button><button class="tab" data-tab="production">Production</button>
+</nav>
+<section id="project" class="page">
+<div class="card"><h3>ð¬ Movie project</h3>
+<label>Movie / episode title</label><input id="title" value="Ang Mahiwagang Banga">
+<div class="grid2"><div><label>Language</label><select id="language"><option>Tagalog</option><option>Taglish</option><option>English</option></select></div><div><label>Visual style</label><select id="style"><option>Cinematic realism</option><option>3D animated family film</option><option>Fantasy realism</option><option>Anime</option></select></div></div>
+<div class="grid2"><div><label>Target duration</label><select id="duration"><option>90 seconds</option><option>60 seconds</option><option>2 minutes</option><option>3 minutes</option><option>5 minutes</option></select></div><div><label>Aspect ratio</label><select id="ratio"><option>Vertical 9:16 (Reels)</option><option>Landscape 16:9</option><option>Square 1:1</option></select></div></div>
+<label>Story summary</label><textarea id="story">Si Mang Elias ay isang mahirap na magsasaka. Nakakita siya ng ginto sa lupang minana niya. Nang malaman niyang ibebenta ang bukid para tayuan ng apartment, naghukay siya at nakakita ng mahiwagang banga na kayang magbigay ng anumang kayamananângunit hindi nito pinagbibigyan ang taong gahaman.</textarea>
+<label>Episode / part</label><input id="episode" value="Episode 1 â Ang Natagpuang Banga">
+<div class="actions"><button id="saveProject">Save project</button><button class="secondary" id="makeScenes">Generate scene plan</button><button class="secondary" id="brief">Copy project brief</button></div>
+<p class="hint">Your project is saved in this browser on this device. Export/copy important work before clearing browser data.</p></div>
+<div class="card"><h3>ð§­ How this free studio works</h3><div class="callout">This app is your planning and prompt workspace. Actual AI image/video rendering happens on a separate provider's website. Free access, queues, daily limits and terms are controlled by that provider and can change. No paid API is connected here.</div></div>
+</section>
+<section id="characters" class="page hidden">
+<div class="card"><h3>ð¥ Character library</h3><label>Character name</label><input id="charName" placeholder="e.g. Mang Elias">
+<label>Character description / continuity notes</label><textarea id="charDesc" placeholder="Age, face, hair, body, clothes, personality..."></textarea>
+<label>Reference picture</label><input id="charImage" type="file" accept="image/*"><p class="hint">Choose an image from your device. Images are resized and stored locally in this browser. Use one clear portrait per character where possible.</p>
+<button id="addChar">Add character</button><div id="characterList"></div></div>
+</section>
+<section id="storyboard" class="page hidden">
+<div class="card"><h3>ðï¸ Scene-by-scene storyboard</h3><p class="hint">Generate a starter scene plan, then edit each scene's action, dialogue and prompts. Each clip prompt is designed to be copied into a separate generator.</p>
+<label>Number of scenes</label><select id="sceneCount"><option>5</option><option>6</option><option>8</option><option>10</option></select>
+<button id="buildStoryboard">Build / refresh scene plan</button><div id="sceneList"></div></div>
+</section>
+<section id="audio" class="page hidden">
+<div class="card"><h3>ðï¸ Dialogue, narration & sound</h3>
+<label>Scene / speaker</label><input id="speaker" placeholder="Mang Elias">
+<label>Tagalog dialogue or narration</label><textarea id="dialogue" placeholder="Ilagay dito ang linya ng character..."></textarea>
+<label>Voice direction</label><input id="voiceDirection" value="Natural Filipino Tagalog voice, warm and emotional, clear pronunciation, conversational pace.">
+<label>Sound effects / music notes</label><textarea id="soundNotes" placeholder="Hal. huni ng ibon, hangin sa palayan, yabag sa lupa, suspenseful musical rise..."></textarea>
+<div class="actions"><button id="saveAudio">Save audio notes</button><button class="secondary" id="copyAudio">Copy voice script</button></div><div id="audioSaved" class="hint"></div></div>
+<div class="card"><h3>Audio workflow</h3><p class="hint">Record your own dialogue or use a free text-to-speech tool that offers free usage. Check its current limits and terms before use. Add music and effects in a free video editor.</p></div>
+</section>
+<section id="production" class="page hidden">
+<div class="card"><h3>ð ï¸ Production checklist</h3><div id="checklist"></div>
+<div class="actions"><button class="secondary" id="copyAll">Copy full production brief</button><button class="secondary" id="exportJson">Export project backup</button><button class="danger" id="reset">Clear local project</button></div></div>
+<div class="card"><h3>ð Free-tool launchpad</h3><p class="hint">These links open external services. Free plans and queues may change; do not enter payment details if you want to stay at $0.</p>
+<div class="item"><h4>Wan2.Video</h4><p>Try image-to-video or text-to-video if free access is available in your region.</p><a class="linkbtn" href="https://wan2.video/" target="_blank" rel="noopener">Open Wan2.Video â</a></div>
+<div class="item"><h4>Hugging Face Spaces</h4><p>Explore community-hosted open-source image and video demos. Availability and queue times vary.</p><a class="linkbtn" href="https://huggingface.co/spaces" target="_blank" rel="noopener">Explore Spaces â</a></div>
+<div class="item"><h4>CapCut</h4><p>Assemble clips, add captions, narration and sound. Check which features are free before using.</p><a class="linkbtn" href="https://www.capcut.com/" target="_blank" rel="noopener">Open CapCut â</a></div>
+</div>
+</section>
+<footer>AI FILM STUDIO Â· Free planning workspace Â· No paid API configured</footer>
 </main>
 <script>
-const $=id=>document.getElementById(id);
-let scenes=[],characters=JSON.parse(localStorage.getItem('cj_chars')||'[]');
-function persist(){localStorage.setItem('cj_project',JSON.stringify({title:$('title').value,language:$('language').value,style:$('style').value,length:$('length').value,format:$('format').value,story:$('story').value}));localStorage.setItem('cj_chars',JSON.stringify(characters))}
-function load(){let p=JSON.parse(localStorage.getItem('cj_project')||'null');if(p)Object.keys(p).forEach(k=>{if($(k))$(k).value=p[k]});renderChars();renderChecks()}
+const $=id=>document.getElementById(id);let chars=JSON.parse(localStorage.getItem('afs_chars')||'[]'),scenes=JSON.parse(localStorage.getItem('afs_scenes')||'[]'),audio=JSON.parse(localStorage.getItem('afs_audio')||'{}');
+const fields=['title','language','style','duration','ratio','story','episode'];
+function project(){let p={};fields.forEach(k=>p[k]=$(k).value);return p}
+function save(){localStorage.setItem('afs_project',JSON.stringify(project()));localStorage.setItem('afs_chars',JSON.stringify(chars));localStorage.setItem('afs_scenes',JSON.stringify(scenes));localStorage.setItem('afs_audio',JSON.stringify(audio))}
+function load(){let p=JSON.parse(localStorage.getItem('afs_project')||'null');if(p)fields.forEach(k=>{if(p[k]!==undefined)$(k).value=p[k]});renderChars();renderScenes();renderChecks();if(audio.dialogue){$('speaker').value=audio.speaker||'';$('dialogue').value=audio.dialogue||'';$('voiceDirection').value=audio.voiceDirection||'';$('soundNotes').value=audio.soundNotes||''}}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.page').forEach(x=>x.classList.toggle('hidden',x.id!==b.dataset.tab))});
-const templates=[
-['Opening – Establishing shot','Ipakita ang lugar at panahon ng kuwento.','Cinematic establishing shot of a rural Philippine farm at sunrise, lush green rice fields, a small traditional farmhouse, distant mountains, warm natural light. Slow aerial camera glide, realistic atmosphere, no text, vertical 9:16.'],
-['Main character introduction','Ipakilala ang pangunahing tauhan sa kanyang pang-araw-araw na gawain.','Use the saved main character reference. Show the farmer working in the field, wiping sweat and pausing to look across the land. Medium shot slowly pushing into a close-up, natural body movement, cinematic realism, vertical 9:16.'],
-['Conflict begins','Ipakita ang taong hahadlang sa pangunahing tauhan.','Use the saved character references. Two brothers confront each other beside the field. One is wealthy and arrogant; the farmer remains calm but hurt. Medium two-shot, subtle camera push-in, realistic expressions, cinematic drama, vertical 9:16.'],
-['The bad news','Ipakita ang pinakamahalagang problema ng kuwento.','The wealthy brother reveals papers showing the land will be redeveloped. The farmer reacts with shock and disbelief. Camera moves from the papers to his face, dramatic natural lighting, cinematic realism, vertical 9:16.'],
-['Mystery / discovery','Magtapos sa isang misteryo na magpapahintay sa susunod na episode.','At dusk, the farmer digs into the earth and discovers an ancient clay jar glowing with mysterious golden light. Slow camera push toward the object, suspenseful cinematic lighting, realistic magical effects, vertical 9:16.']
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function resize(file){return new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>{let im=new Image();im.onload=()=>{let c=document.createElement('canvas'),sc=Math.min(1,850/Math.max(im.width,im.height));c.width=im.width*sc;c.height=im.height*sc;c.getContext('2d').drawImage(im,0,0,c.width,c.height);resolve(c.toDataURL('image/jpeg',.76))};im.onerror=reject;im.src=r.result};r.onerror=reject;r.readAsDataURL(file)})}
+$('addChar').onclick=async()=>{let name=$('charName').value.trim(),desc=$('charDesc').value.trim(),f=$('charImage').files[0];if(!name||!desc){alert('Enter a character name and description first.');return}if(f&&f.size>3500000){alert('Please choose an image under 3.5 MB.');return}let image=f?await resize(f):'';chars.push({name,desc,image});$('charName').value='';$('charDesc').value='';$('charImage').value='';save();renderChars()};
+function renderChars(){$('characterList').innerHTML='';chars.forEach((c,i)=>{let d=document.createElement('div');d.className='item';let h=document.createElement('h4');h.textContent=c.name;d.append(h);let p=document.createElement('p');p.textContent=c.desc;d.append(p);if(c.image){let im=document.createElement('img');im.className='photo';im.src=c.image;d.append(im)}let lab=document.createElement('label');lab.textContent='Upload / replace reference picture';d.append(lab);let f=document.createElement('input');f.type='file';f.accept='image/*';f.onchange=async()=>{let file=f.files[0];if(!file)return;if(file.size>3500000){alert('Choose an image under 3.5 MB.');return}c.image=await resize(file);save();renderChars()};d.append(f);let b=document.createElement('button');b.className='danger';b.textContent='Delete character';b.onclick=()=>{chars.splice(i,1);save();renderChars()};d.append(b);$('characterList').append(d)})}
+const baseScenes=[
+['Opening: Ang bukid','Ipakita ang payak na buhay sa bukid.','Wide establishing shot of a rural Filipino farm at sunrise, rice fields, humble nipa-style home, distant green hills, gentle morning mist. Slow cinematic camera glide.'],
+['Si Mang Elias','Ipakilala ang magsasakang pangunahing tauhan.','Show the saved Mang Elias character reference. He works hard in the field, wipes sweat, then looks across his land. Medium shot slowly pushing into a close-up, natural movement.'],
+['Ang balita','Dumating ang balitang maaaring mawala ang lupa.','A tense family conversation near a humble home. The farmer listens with worry as his family discusses the land sale. Natural expressions, intimate medium shots.'],
+['Pagdating ni Ramon','Ipakita ang kapatid at ang alitan.','Show saved references for Mang Elias and Ramon. The wealthy older brother arrives at the farm, confident and intimidating. Two-shot, subtle camera push-in, tense atmosphere.'],
+['Ang paghuhukay','Nagsimulang maghukay si Elias sa bukid.','Mang Elias digs into the earth near the field. Close-up of rough hands, shovel hitting something hard, dust and soil falling. Slow suspenseful camera movement.'],
+['Ang mahiwagang banga','Natagpuan niya ang sinaunang banga.','A weathered ancient clay jar emerges from the soil and begins glowing with mysterious golden light. Close-up, slow reveal, magical particles, suspenseful cinematic lighting.'],
+['Ang unang hiling','Sinubukan ni Elias ang kapangyarihan nito.','Mang Elias cautiously touches the glowing jar and watches in disbelief as a small amount of treasure appears. Emotional close-up, restrained magical effect.'],
+['Cliffhanger','May babala ang mahiwagang banga.','The jar glows brighter as a mysterious warning is revealed. Mang Elias looks frightened and amazed. Slow push-in to his eyes, end on suspenseful fade.']
 ];
-function makeScenes(){let title=$('title').value||'Untitled movie';scenes=templates.map((t,i)=>({name:t[0],beat:t[1],prompt:t[2]}));renderScenes();persist();document.querySelector('[data-tab="scenes"]').click()}
-function renderScenes(){$('sceneList').innerHTML='';scenes.forEach((s,i)=>{let d=document.createElement('div');d.className='scene';d.innerHTML=`<h4>SCENE ${i+1} · ${s.name}</h4><p>${s.beat}</p><p><b>AI VIDEO PROMPT</b>\n${s.prompt}</p><button class="secondary" data-copy="${i}">Copy prompt</button>`;$('sceneList').appendChild(d)});$('sceneList').querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(scenes[+b.dataset.copy].prompt).then(()=>b.textContent='Copied!'))}
-function renderChars(){$('charList').innerHTML='';characters.forEach((c,i)=>{let d=document.createElement('div');d.className='scene';d.innerHTML=`<h4>${esc(c.name)}</h4><p>${esc(c.desc)}</p><button class="danger" data-del="${i}">Delete</button>`;$('charList').appendChild(d)});$('charList').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{characters.splice(+b.dataset.del,1);persist();renderChars()})}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-$('make').onclick=makeScenes;$('save').onclick=()=>{persist();$('save').textContent='Saved ✓';setTimeout(()=>$('save').textContent='Save project',1400)};
-$('addChar').onclick=()=>{let n=$('charName').value.trim(),d=$('charDesc').value.trim();if(!n||!d){alert('Add a character name and description first.');return}characters.push({name:n,desc:d});$('charName').value='';$('charDesc').value='';persist();renderChars()};
-function renderChecks(){let items=['Finalize the story and episode ending','Create and save character reference images','Generate each scene image','Animate scene images in an AI video tool','Record or generate Tagalog narration','Edit clips, subtitles and sound in a video editor','Export and review the final video'];$('checks').innerHTML=items.map((x,i)=>`<label style="display:flex;gap:10px;align-items:center;padding:9px 0"><input type="checkbox" style="width:18px;height:18px;accent-color:#e8b96b" data-check="${i}"><span>${x}</span></label>`).join('');document.querySelectorAll('[data-check]').forEach(c=>c.checked=localStorage.getItem('cj_check_'+c.dataset.check)==='1');document.querySelectorAll('[data-check]').forEach(c=>c.onchange=()=>localStorage.setItem('cj_check_'+c.dataset.check,c.checked?'1':'0'))}
-$('copyAll').onclick=()=>{let p={title:$('title').value,story:$('story').value,characters,scenes};navigator.clipboard.writeText(JSON.stringify(p,null,2)).then(()=>$('copyAll').textContent='Copied ✓')};
-$('clear').onclick=()=>{if(confirm('Delete this project and saved characters from this browser?')){localStorage.removeItem('cj_project');localStorage.removeItem('cj_chars');location.reload()}};
+function makeScenes(){let n=+$('sceneCount').value;scenes=baseScenes.slice(0,n).map((s,i)=>({name:s[0],action:s[1],prompt:s[2]+' '+project().style+'. '+project().ratio+'. Keep character appearance consistent with uploaded reference images. No subtitles, no text, no watermark.',dialogue:''}));save();renderScenes()}
+$('makeScenes').onclick=()=>{$('sceneCount').value='5';makeScenes();document.querySelector('[data-tab="storyboard"]').click()};
+$('buildStoryboard').onclick=makeScenes;
+function renderScenes(){$('sceneList').innerHTML='';if(!scenes.length){$('sceneList').innerHTML='<p class="hint">No scenes yet. Click Build / refresh scene plan.</p>';return}scenes.forEach((s,i)=>{let d=document.createElement('div');d.className='item';d.innerHTML=`<div class="scenehead"><h4>SCENE ${i+1}: ${esc(s.name)}</h4><span class="badge">PROMPT</span></div><label>Scene action</label><textarea data-field="action" data-i="${i}">${esc(s.action)}</textarea><label>Tagalog dialogue</label><textarea data-field="dialogue" data-i="${i}" placeholder="Optional dialogue...">${esc(s.dialogue||'')}</textarea><label>AI video prompt</label><textarea data-field="prompt" data-i="${i}">${esc(s.prompt)}</textarea><div class="actions"><button class="secondary" data-copy="${i}">Copy video prompt</button><button class="secondary" data-copydialogue="${i}">Copy dialogue</button></div>`;$('sceneList').append(d)});$('sceneList').querySelectorAll('textarea').forEach(t=>t.onchange=()=>{scenes[+t.dataset.i][t.dataset.field]=t.value;save()});$('sceneList').querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copy(scenes[+b.dataset.copy].prompt,b));$('sceneList').querySelectorAll('[data-copydialogue]').forEach(b=>b.onclick=()=>copy(scenes[+b.dataset.copy].dialogue,b))}
+function copy(txt,b){navigator.clipboard.writeText(txt||'').then(()=>{let old=b.textContent;b.textContent='Copied!';setTimeout(()=>b.textContent=old,1200)}).catch(()=>alert('Select and copy the text manually.'))}
+$('saveProject').onclick=()=>{save();$('saveProject').textContent='Saved â';setTimeout(()=>$('saveProject').textContent='Save project',1300)};
+$('brief').onclick=()=>copy(JSON.stringify({project:project(),characters:chars.map(c=>({name:c.name,description:c.desc})),scenes},null,2),$('brief'));
+$('saveAudio').onclick=()=>{audio={speaker:$('speaker').value,dialogue:$('dialogue').value,voiceDirection:$('voiceDirection').value,soundNotes:$('soundNotes').value};save();$('audioSaved').textContent='Audio notes saved on this device.'};
+$('copyAudio').onclick=()=>copy(`Speaker: ${$('speaker').value}\nDialogue: ${$('dialogue').value}\nVoice direction: ${$('voiceDirection').value}\nSound: ${$('soundNotes').value}`,$('copyAudio'));
+const tasks=['Finalize story and episode ending','Save reference pictures for all main characters','Review each storyboard scene and dialogue','Generate scene images using a free image tool','Animate still images using a free video generator','Record or create Tagalog voice-over','Collect music and sound effects with usage rights','Assemble clips and subtitles in a free editor','Review the final video and export'];
+function renderChecks(){$('checklist').innerHTML='';tasks.forEach((t,i)=>{let l=document.createElement('label');l.className='check';l.innerHTML=`<input type="checkbox" data-task="${i}"><span>${esc(t)}</span>`;$('checklist').append(l)});$('checklist').querySelectorAll('input').forEach(c=>{c.checked=localStorage.getItem('afs_task_'+c.dataset.task)==='1';c.onchange=()=>localStorage.setItem('afs_task_'+c.dataset.task,c.checked?'1':'0')})}
+function allData(){return {project:project(),characters:chars.map(c=>({name:c.name,description:c.desc})),scenes,audio}}
+$('copyAll').onclick=()=>copy(JSON.stringify(allData(),null,2),$('copyAll'));
+$('exportJson').onclick=()=>{let blob=new Blob([JSON.stringify(allData(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ai-film-studio-project-backup.json';a.click();URL.revokeObjectURL(a.href)};
+$('reset').onclick=()=>{if(confirm('Clear project, characters, scenes and audio notes saved in this browser?')){['afs_project','afs_chars','afs_scenes','afs_audio'].forEach(k=>localStorage.removeItem(k));location.reload()}};
 load();
-</script>
-</body></html>
+</script></body></html>
